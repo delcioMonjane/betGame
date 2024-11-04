@@ -81,7 +81,7 @@
 			"request": {
 				"method": "PUT",
 				"header": [],
-				"url": "{{host}}{{baseUrl}}/api/play/close/2"
+				"url": "{{host}}{{baseUrl}}/play/close/2"
 			},
 			"response": []
 		},
