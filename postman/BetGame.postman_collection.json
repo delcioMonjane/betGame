@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "1bae32c6-aa3e-4cf7-8462-f3a355ad164d",
+		"name": "BetGame",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30672596"
+	},
+	"item": [
+		{
+			"name": "registerUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"manuel@gmail.com\",\r\n    \"password\": \"Manuelino123!\",\r\n    \"name\": \"manuel\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{host}}{{baseUrl}}/public/register"
+			},
+			"response": []
+		},
+		{
+			"name": "getBalance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{host}}{{baseUrl}}/wallets/2"
+			},
+			"response": []
+		},
+		{
+			"name": "addBalance",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{baseUrl}}/wallets/deposit/2?amount=100",
+					"host": [
+						"{{host}}{{baseUrl}}"
+					],
+					"path": [
+						"wallets",
+						"deposit",
+						"2"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "placeBet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 2,\r\n    \"betAmount\": 20,\r\n    \"type\": \"EVEN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{host}}{{baseUrl}}/play/"
+			},
+			"response": []
+		},
+		{
+			"name": "closeBet",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": "{{host}}{{baseUrl}}/api/play/close/2"
+			},
+			"response": []
+		},
+		{
+			"name": "getBetsFromUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{host}}{{baseUrl}}/play/user/2"
+			},
+			"response": []
+		}
+	]
+}

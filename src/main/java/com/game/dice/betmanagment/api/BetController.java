@@ -27,6 +27,12 @@ public class BetController {
         }
     }
 
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<BetDTO>> getBetsByUser(@PathVariable Long userId) {
+        List<Bet> bets = betService.getBetsByUser(userId);
+        return ResponseEntity.ok(BetMapper.mapToDTOs(bets));
+    }
+
     @GetMapping("/user/{userId}/open")
     public ResponseEntity<List<BetDTO>> getOpenBetsByUser(@PathVariable Long userId) {
         List<Bet> openBets = betService.getOpenBetsByUser(userId);
